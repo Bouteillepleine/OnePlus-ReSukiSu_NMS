@@ -350,7 +350,7 @@ jobs:
             echo "| 🧰 ADIOS · Debug artifacts | ${{ inputs.enable_adios && '✅' || '❌' }} · ${{ inputs.debug && '✅' || '❌' }} |"
             echo ""
             echo ""
-            echo "**NoMount (hookless)** — \`Bouteillepleine/kbuild@hookless\`, version \`${{ steps.set-matrix.outputs.nomount_version }}\`"
+            echo "**NoMount (hookless)** — \`maxsteeel/nomount\`, version \`${{ steps.set-matrix.outputs.nomount_version }}\`"
             echo ""
           } >> "$GITHUB_STEP_SUMMARY"
           
@@ -1027,8 +1027,11 @@ jobs:
           | **Clean Build** | $( [ "$CLEAN_BUILD" = "true" ] && echo "✅ Yes (no ccache)" || echo "❌ No (ccache enabled)" ) |
           | **Compiler** | Clang (version varies by device) |
           
+          ### 📌 NoMount Source
+          
+          | Component | Source |
           |-----------|--------|
-          | NoMount (hookless) | [\`Bouteillepleine/kbuild@hookless\`](https://github.com/Bouteillepleine/kbuild/tree/hookless) |
+          | NoMount (hookless) | [\`maxsteeel/nomount\`](https://github.com/maxsteeel/nomount) |
           
           ---
           
