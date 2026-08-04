@@ -66,6 +66,8 @@ Use GitHub Actions:
 Actions → Build and Release OnePlus Kernels → Run workflow
 ```
 
+> **First run:** enable **Force toolchain sync before build** (auto-on for releases; ~99% of test runs do not need it) — it is required on the very first run to populate the toolchain cache.
+
 Use ReSukiSU option:
 
 ```json
