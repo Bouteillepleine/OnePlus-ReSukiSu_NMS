@@ -74,6 +74,11 @@ on:
         description: 'Custom kernel build timestamp for uname -a (e.g. "Fri Dec 5 02:05:55 UTC 2025"). Leave empty for current time.'
         type: string
         default: ''
+      nomount_ref:
+        description: 'kbuild branch/ref for the hookless NoMount src + patches (default hookless; set e.g. test/sprivate to validate a branch before merge)'
+        required: false
+        type: string
+        default: hookless
 
 jobs:
   set-op-model:
@@ -546,6 +551,7 @@ jobs:
           enable_adios: ${{ inputs.enable_adios }}
           clean: ${{ inputs.clean_build }}
           debug: ${{ inputs.debug }}
+          nomount_ref: ${{ inputs.nomount_ref }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 📊 Build statistics
