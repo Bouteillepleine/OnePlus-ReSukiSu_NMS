@@ -923,12 +923,14 @@ runs:
         sed -i \
           -e '/^CONFIG_KSU=/d' \
           -e '/^CONFIG_KSU_MULTI_MANAGER_SUPPORT=/d' \
+          -e '/^CONFIG_KSU_TOOLKIT_SUPPORT=/d' \
           -e '/^CONFIG_KSU_FULL_NAME_FORMAT=/d' \
           "$DEFCONFIG" || true
 
         {
           printf '%s\n' 'CONFIG_KSU=y'
           printf '%s\n' 'CONFIG_KSU_MULTI_MANAGER_SUPPORT=y'
+          printf '%s\n' 'CONFIG_KSU_TOOLKIT_SUPPORT=y'
           printf 'CONFIG_KSU_FULL_NAME_FORMAT="%s-⚡Ultra⚡@ReSukiSU"\n' "${TAG_NAME}"
         } >> "$DEFCONFIG"
 
