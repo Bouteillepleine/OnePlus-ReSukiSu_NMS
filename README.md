@@ -11,7 +11,7 @@
 [![Build](https://img.shields.io/github/actions/workflow/status/Bouteillepleine/OnePlus-ReSukiSu_NMS/build-kernel-release.yml?style=for-the-badge&logo=githubactions&logoColor=white&label=Build)](https://github.com/Bouteillepleine/OnePlus-ReSukiSu_NMS/actions)
 [![Stars](https://img.shields.io/github/stars/Bouteillepleine/OnePlus-ReSukiSu_NMS?style=for-the-badge&logo=github&color=E3B341)](https://github.com/Bouteillepleine/OnePlus-ReSukiSu_NMS/stargazers)
 
-**Forked from [WildKernels/OnePlus_KernelSU_SUSFS](https://github.com/WildKernels/OnePlus_KernelSU_SUSFS)**
+**Based on [WildKernels/OnePlus_KernelSU_SUSFS](https://github.com/WildKernels/OnePlus_KernelSU_SUSFS)**
 
 </div>
 
