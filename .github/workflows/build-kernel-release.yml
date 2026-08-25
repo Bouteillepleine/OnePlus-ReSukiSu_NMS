@@ -65,11 +65,6 @@ on:
         required: false
         type: boolean
         default: false
-      enable_ghost:
-        description: 'Apply the _ghost existence-oracle cloak (O_PATH / *xattr / link / trailing-ENOTDIR / truncate / utimensat / chmod). ON by default. Boot-verified on 6.12 (OP15); 6.6, 6.1, 5.15 and 5.10 are apply- and compile-verified only. Inert unless the Suite populates its tables (needs engine v26). Turn OFF to bisect a boot failure.'
-        required: false
-        type: boolean
-        default: true
       mirror_toolchains:
         description: 'Force toolchain sync before build — REQUIRED on the first run to populate the toolchain cache (auto-on for releases; ~99% of later test runs do not need it)'
         required: false
@@ -540,7 +535,6 @@ jobs:
           optimize_level: ${{ inputs.optimize_level }}
           build_timestamp: ${{ inputs.build_timestamp }}
           enable_adios: ${{ inputs.enable_adios }}
-          enable_ghost: ${{ inputs.enable_ghost }}
           clean: ${{ inputs.clean_build }}
           debug: ${{ inputs.debug }}
           nomount_ref: ${{ inputs.nomount_ref }}
