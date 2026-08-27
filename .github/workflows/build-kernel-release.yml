@@ -79,6 +79,11 @@ on:
         required: false
         type: string
         default: hookless
+      patches_ref:
+        description: 'kernel_patches branch/ref for the _ghost/_hook/_pathhide cloaks and the apply script (default main; set a branch to validate before merge)'
+        required: false
+        type: string
+        default: main
 
 jobs:
   set-op-model:
@@ -538,6 +543,7 @@ jobs:
           clean: ${{ inputs.clean_build }}
           debug: ${{ inputs.debug }}
           nomount_ref: ${{ inputs.nomount_ref }}
+          patches_ref: ${{ inputs.patches_ref }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 📊 Build statistics
