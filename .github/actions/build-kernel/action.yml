@@ -1664,6 +1664,15 @@ runs:
           grep -q "^${sym}=y" "$OUT/.config" \
             || { echo "::error::${sym} was dropped by olddefconfig (not defined by the KSU source?)"; exit 1; }
         done
+
+        if [ "$OP_NMS" = true ]; then
+          bash "$BOUTEILLE_KERNEL_PATCHES_FOLDER/scripts/apply_nomount_stack.sh" assert-config
+        fi
+
+        if [ "$OP_BBG" != true ] && grep -q '^CONFIG_BBG=y' "$OUT/.config"; then
+          echo "::error::CONFIG_BBG is enabled although this device sets bbg=false"
+          exit 1
+        fi
         
         KCFLAGS="$KCFLAGS -Wno-error -pipe ${KCFLAGS_EXTRA}"
         KCPPFLAGS="$KCPPFLAGS -DCONFIG_OPTIMIZE_INLINING"
